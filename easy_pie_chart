@@ -1,0 +1,13 @@
+install.packages("viridis")  # Install color palette if not already installed
+
+library("viridis")           # Load color palette
+
+slices <- c(317, 586, 18, 3)  # Set values for each category
+
+lbls <- c("Influenza Only   ", "SARS-CoV-2 Only   ", "Coinfection (Not Sequenceable)   ", "Coinfection (Sequenceable)   ")    #Set name labels for each category
+
+pct <- round(slices/sum(slices)*100, 2)   # Define percentage
+
+lbls <- paste(lbls, slices, " = ", pct, "%") # Add percents to labels
+
+pie(slices, labels = lbls, col=plasma(length(lbls)), cex = 1.7)

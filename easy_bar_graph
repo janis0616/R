@@ -1,0 +1,6 @@
+install.packages("viridis")  # Install color palette if not already installed
+library("viridis") # Load color palette
+
+bars <- c(317, 586, 18, 3)  # Set values for each category
+
+barplot(bars, ylab = "Number of Samples", col = c(plasma(4)), names.arg = c("Influenza Only" , "SARS-CoV-2 Only" , "Coinfections (Not Sequenceable)" , "Coinfections (Sequenceable)"), ylim = c(0, 600), cex.axis=1.7, cex.names=2, cex.lab=1.7)
